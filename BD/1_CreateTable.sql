@@ -19,7 +19,7 @@ create table service(
 	code_service integer(8) primary key,
 	specialite varchar(30) not null,
 	directeur varchar(30) not null,
-	foreign key (directeur) references agent (nom_de_code) on delete cascade on update cascade);
+	foreign key (directeur) references agent (nom_de_code) on update cascade);
 
 create table personne(
 	nom varchar(30) not null,
@@ -30,7 +30,7 @@ create table personne(
 	nom_pays varchar(50) not null,
 	primary key (nom, prenom),
 	foreign key (nom_agent) references agent (nom_de_code) on delete cascade on update cascade,
-	foreign key (nom_pays) references pays (nom) on delete cascade on update cascade);
+	foreign key (nom_pays) references pays (nom));
 
 create table travail(
 	nom_de_code varchar(30) not null,

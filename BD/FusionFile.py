@@ -3,6 +3,7 @@ import os
 files = filter(os.path.isfile, os.listdir(os.curdir))
 res = ""
 nameresfile = "BD.sql"
+os.remove(nameresfile)
 resFile = open(nameresfile, "a")
 
 list_part = list()
